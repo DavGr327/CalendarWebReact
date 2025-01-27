@@ -1,0 +1,210 @@
+/* Contenitore principale del calendario */
+.calendar-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: #f6f6f6;
+}
+
+/* Barra laterale del calendario */
+.calendar-sidebar {
+    background: #27ae60; /* Colore personalizzabile */
+    padding: 50px 30px;
+    width: 35%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-sidebar h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.calendar-sidebar p {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.current-events {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.current-events p {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 10px 0;
+    color: #f1f1f1;
+}
+
+.sidebar-links {
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.sidebar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Pulsante per creare un evento */
+.create-event-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-event-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Sezione principale del calendario */
+.calendar-main {
+    padding: 50px;
+    width: 65%;
+}
+
+/* Stile del selettore di calendario */
+.calendar-select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Stile del componente React Calendar */
+.react-calendar {
+    border: none;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra di navigazione del calendario */
+.react-calendar__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f3f3f3;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.react-calendar__navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Giorni della settimana */
+.react-calendar__month-view__weekdays {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #777;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Celle dei giorni */
+.react-calendar__tile {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 50%;
+    border: 0px solid #ddd;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Effetto al passaggio del mouse */
+.react-calendar__tile:hover {
+    background: #27ae60;
+    color: #fff;
+}
+
+/* Giorno selezionato con bordo colorato */
+.react-calendar__tile--active {
+    background: transparent !important;
+    color: #27ae60 !important;
+    font-weight: bold;
+    border: 2px solid #27ae60 !important;
+    box-shadow: none;
+}
+
+/* Giorni del mese precedente o successivo - versione migliorata */
+.react-calendar__tile--neighboringMonth {
+    color: #bbb !important; /* Colore grigio più chiaro */
+    opacity: 0.5 !important; /* Riduzione della visibilità */
+    font-weight: normal !important; 
+    background: none !important;
+}
+
+/* Rimuovere hover sui giorni non appartenenti al mese attuale */
+.react-calendar__tile--neighboringMonth:hover {
+    background: none !important;
+    color: #bbb !important;
+    cursor: default !important;
+}
+
+
+/* Giorno odierno */
+.react-calendar__tile--now {
+    background: #60A5FA;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+
+    .calendar-sidebar {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .calendar-main {
+        width: 100%;
+        padding: 30px;
+    }
+}
